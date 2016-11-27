@@ -1,4 +1,6 @@
 <script>
+  function enableBlue(){
+    
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
 .then(device => {
   // Human-readable name of the device.
@@ -9,4 +11,6 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 })
 .then(server => { /* ... */ })
 .catch(error => { alert(error); });
+  }
 </script>
+<button onclick="enableBlue()" >enable</button>
