@@ -1,0 +1,15 @@
+<script>
+  function enableBlue(){
+    
+navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => {
+  // Human-readable name of the device.
+  alert(device.name);
+  // Attempts to connect to remote GATT Server.
+  return device.gatt.connect();
+})
+.then(server => { /* ... */ })
+.catch(error => { alert(error); });
+  }
+</script>
+<button onclick="enableBlue()" >enableff</button>
